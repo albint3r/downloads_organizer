@@ -13,7 +13,7 @@ class FileSaver:
     FILES_SAVE_DIRECTORIES = {'Images': ['.jpeg', '.gif', '.jpg', '.jfif', '.png'],
                               'Video': ['.mp4', '.mkv'],
                               'Audio': ['.mp3', '.WAV'],
-                              'Text': ['.html', '.pdf', '.docx', '.pptx'],
+                              'Text': ['.html', '.pdf', '.docx', '.pptx', '.opera'],
                               'SpreedSheets': ['.csv', '.xlsx'],
                               'Zip': ['.zip'],
                               'Others': None}
@@ -43,7 +43,6 @@ class FileSaver:
 
     def create_category_month_directory(self, month_path: str) -> str:
         os.mkdir(month_path)
-
 
     @staticmethod
     def get_save_category_moth_dir(original_file: str, category_directory: str) -> str:

@@ -63,10 +63,14 @@ class DownloadsOrganizer:
             return os.path.join(self.save.save_downloads_root, 'Others')
 
     def move_download_files_to_targe_directory(self):
+        print('Start moving your files!')
         for file, ext in self.get_split_download_files():
-            original_file_location = self.get_original_file_location(file, ext)
-            final_save_path = self.get_targe_category_month_directory(original_file_location, file, ext)
-            shutil.copyfile(original_file_location, final_save_path)
+            if file != '.opera':
+                original_file_location = self.get_original_file_location(file, ext)
+                final_save_path = self.get_targe_category_month_directory(original_file_location, file, ext)
+                shutil.copyfile(original_file_location, final_save_path)
+
+        print('All files was moved to your new directory!')
 
 
 if __name__ == '__main__':
